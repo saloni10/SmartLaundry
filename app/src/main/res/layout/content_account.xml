@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentBottom="true"
+    android:layout_toStartOf="@+id/layout">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="60dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.lenovo.laundry2.Account"
+    tools:showIn="@layout/app_bar_account"
+    android:id="@+id/layout"
+    android:background="@drawable/back">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your account details"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:id="@+id/details"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textSize="20dp"
+        android:textColor="#64B5F6"
+        android:id="@+id/edit"
+        android:layout_alignRight="@id/details"
+        android:layout_alignParentRight="true"
+        android:onClick="edit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textSize="16dp"
+        android:id="@+id/name"
+        android:layout_below="@id/details"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yashika"
+        android:id="@+id/nameEdit"
+        android:layout_below="@id/name"
+        android:editable="false"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room No."
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textSize="16dp"
+        android:id="@+id/room"
+        android:layout_below="@id/nameEdit"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="C-402"
+        android:id="@+id/roomEdit"
+        android:layout_below="@id/room"
+        android:editable="false"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/roomEdit"
+        android:id="@+id/ll">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            android:text="Hostel"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:id="@+id/radioGroup"
+                >
+
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Girls"
+                    android:id="@+id/radioButton"
+                    android:checked="false"
+                    android:textSize="16dp"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Boys"
+                    android:id="@+id/radioButton2"
+                    android:checked="false"
+                    android:textSize="16dp"
+                    android:layout_weight="0.13" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textSize="16dp"
+        android:id="@+id/email"
+        android:layout_below="@id/ll"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="yashika@gmail.com"
+        android:id="@+id/emailEdit"
+        android:layout_below="@id/email"
+        android:editable="false"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textSize="16dp"
+        android:id="@+id/mobile"
+        android:layout_below="@id/emailEdit"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="9876543210"
+        android:id="@+id/mobileEdit"
+        android:layout_below="@id/mobile"
+        android:editable="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Password"
+        android:textAllCaps="false"
+        android:textStyle="normal"
+        android:textSize="20dp"
+        android:textColor="#64B5F6"
+        android:id="@+id/changePassword"
+        android:layout_below="@id/mobileEdit"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"/>
+
+
+
+
+</RelativeLayout>
+</ScrollView>

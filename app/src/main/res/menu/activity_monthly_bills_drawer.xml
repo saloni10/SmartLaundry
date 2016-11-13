@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_rateList"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Rate List" />
+        <item
+            android:id="@+id/nav_ongoingOrders"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Ongoing Orders" />
+        <item
+            android:id="@+id/nav_monthlyBills"
+            android:icon="@android:drawable/ic_menu_month"
+            android:title="Monthly Bills" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="History" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/user"
+            android:title="Account" />
+
+
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Info" />
+    </group>
+
+
+</menu>

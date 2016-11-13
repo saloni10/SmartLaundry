@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.lenovo.laundry2.Place_Order"
+    tools:showIn="@layout/app_bar_place__order"
+    android:orientation="vertical"
+    android:background="@drawable/back">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="Shirts/Tops"
+                    android:textSize="16dp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:text="Qty"
+                    android:gravity="right"
+                    android:textSize="16dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Price"
+                    android:textSize="16dp"
+                    android:gravity="right"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.35">
+                    <Button
+                        android:id="@+id/topDecBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/circular_button"
+                        android:text="-"
+                        android:textSize="16dp"
+                        android:layout_marginRight="24dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:onClick="topDec"/>
+                    <Button
+                        android:id="@+id/topIncBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+
+                        android:background="@drawable/circular_button"
+                        android:text="+"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:onClick="topInc"
+                        />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/topQty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_weight="0.2"/>
+
+                <TextView
+                    android:id="@+id/topPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout2"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="Lowers/Jeans"
+                    android:textSize="16dp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:text="Qty"
+                    android:gravity="right"
+                    android:textSize="16dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Price"
+                    android:textSize="16dp"
+                    android:gravity="right"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.35">
+                    <Button
+                        android:onClick="lowerDec"
+                        android:id="@+id/lowerDecBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="24dp"
+                        android:background="@drawable/circular_button"
+                        android:text="-"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        />
+                    <Button
+                        android:onClick="lowerInc"
+                        android:id="@+id/lowerIncBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+
+                        android:background="@drawable/circular_button"
+                        android:text="+"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lowerQty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_weight="0.2"/>
+
+                <TextView
+                    android:id="@+id/lowerPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_weight="0.2"
+                    android:layout_marginRight="3dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout3"
+            android:layout_marginTop="8dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="Bedsheet/Curtain"
+                    android:textSize="16dp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:text="Qty"
+                    android:gravity="right"
+                    android:textSize="16dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Price"
+                    android:textSize="16dp"
+                    android:gravity="right"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.35">
+                    <Button
+                        android:onClick="bedsheetDec"
+                        android:id="@+id/bedsheetDecBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="24dp"
+                        android:background="@drawable/circular_button"
+                        android:text="-"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"/>
+                    <Button
+                        android:onClick="bedsheetInc"
+                        android:id="@+id/bedsheetIncBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="24dp"
+                        android:background="@drawable/circular_button"
+                        android:text="+"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bedsheetQty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_weight="0.2"/>
+
+                <TextView
+                    android:id="@+id/bedsheetPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:gravity="right"
+                    android:layout_marginRight="3dp"
+                    android:textSize="16dp"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout4"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:text="Towel/Others"
+                    android:textSize="16dp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.2"
+                    android:layout_height="wrap_content"
+                    android:text="Qty"
+                    android:gravity="right"
+                    android:textSize="16dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:text="Price"
+                    android:textSize="16dp"
+                    android:gravity="right"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.35">
+                    <Button
+                        android:onClick="otherDec"
+                        android:id="@+id/otherDecBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="24dp"
+                        android:background="@drawable/circular_button"
+                        android:text="-"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"/>
+                    <Button
+                        android:onClick="otherInc"
+                        android:id="@+id/otherIncBtn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginRight="24dp"
+                        android:background="@drawable/circular_button"
+                        android:text="+"
+                        android:textSize="16dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/otherQty"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_weight="0.2"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/otherPrice"
+                    android:text="0"
+                    android:textSize="16dp"
+                    android:gravity="right"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="0.2"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="64dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/radioService">
+            <RadioButton
+                android:id="@+id/washRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wash"
+                android:layout_marginRight="8dp"
+                android:onClick="clickradioButton"
+                android:checked="true"
+                />
+            <RadioButton
+                android:id="@+id/ironRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iron"
+                android:layout_marginRight="8dp"
+                android:onClick="clickradioButton"
+                />
+            <RadioButton
+                android:id="@+id/bothRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wash and Iron"
+                android:layout_marginRight="8dp"
+                android:onClick="clickradioButton"
+                />
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_marginBottom="8dp"
+            >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to Bucket"
+                android:background="#64B5F6"
+                android:textColor="@android:color/white"
+                android:onClick="placeorderSummary1"
+
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
