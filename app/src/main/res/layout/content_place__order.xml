@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentBottom="true"
+    >
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="50dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.lenovo.laundry2.Place_Order"
     tools:showIn="@layout/app_bar_place__order"
@@ -429,7 +438,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
             android:id="@+id/radioService">
             <RadioButton
@@ -460,22 +469,84 @@
         </RadioGroup>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pickup Date :"
+            android:layout_weight="0.2"
+            android:gravity="left"
+            android:layout_marginRight="16dp"
+
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            >
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:id="@+id/date_picker"
+            android:datePickerMode="spinner"
+            ></DatePicker>
+            </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pickup Time :"
+            android:layout_weight="0.2"
+            android:gravity="right"
+            android:layout_marginRight="16dp"
+
+            />
+
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_picker"></TimePicker>
+
+
+    </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom"
             android:layout_marginBottom="8dp"
             >
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Add to Bucket"
                 android:background="#64B5F6"
                 android:textColor="@android:color/white"
-                android:onClick="placeorderSummary1"
+                android:onClick="placeOrder_database"
 
 
-                />
+                android:id="@+id/button2" />
         </LinearLayout>
 
     </LinearLayout>
+</ScrollView>

@@ -13,69 +13,12 @@
     tools:showIn="@layout/activity_place_order2"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Order Summary"
-        android:layout_gravity="center_horizontal"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="24dp"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Room No. :"
-            android:layout_weight="0.3"
-            android:gravity="right"
-            android:layout_marginRight="16dp"
-
-            />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:gravity="left"
-            android:text="C402"
-
-            />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        >
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Hostel :"
-            android:layout_weight="0.3"
-            android:gravity="right"
-            android:layout_marginRight="16dp"
-
-            />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:gravity="left"
-            android:text="Girls"
-
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         >
         <TextView
             android:layout_width="0dp"
@@ -91,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:gravity="left"
-            android:text="2"
+            android:id="@+id/topNo"
 
             />
 
@@ -117,7 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:gravity="left"
-            android:text="2"
+           android:id="@+id/lowerNo"
+
 
             />
 
@@ -143,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:gravity="left"
-            android:text="1"
+            android:id="@+id/bedsheetNo"
 
             />
 
@@ -169,7 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:gravity="left"
-            android:text="1"
+            android:id="@+id/otherNo"
 
             />
 
@@ -195,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:gravity="left"
-            android:text="6"
+            android:id="@+id/totalNo"
 
             />
 
@@ -222,84 +166,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:gravity="left"
-            android:text="47"
+            android:id="@+id/totalPrice"
 
             />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        >
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Enter Pickup Time :"
-            android:layout_weight="0.3"
-            android:gravity="right"
-            android:layout_marginRight="16dp"
-
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:gravity="left"
-            android:text=""
-            android:inputType="date"
-
-
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        >
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Enter Pickup Date :"
-            android:layout_weight="0.3"
-            android:gravity="right"
-            android:layout_marginRight="16dp"
-
-            />
-        <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:gravity="left"
-            android:text=""
-            android:inputType="date"
-
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="8dp"
-        >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirm"
-            android:background="#64B5F6"
-            android:textColor="@android:color/white"
-            android:layout_gravity="bottom"
-            android:focusable="true"
-            android:onClick="placeOrderSummary"
-            android:focusableInTouchMode="true"/>
-    </LinearLayout>
 
 </LinearLayout>

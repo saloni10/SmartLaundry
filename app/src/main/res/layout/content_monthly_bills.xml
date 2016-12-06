@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scrollView"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentBottom="true"
-    android:layout_toStartOf="@+id/layout">
+    android:layout_width="match_parent">
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,11 +12,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginTop="8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.lenovo.laundry2.MonthlyBills"
     tools:showIn="@layout/app_bar_monthly_bills"
     android:id="@+id/layout"
-    android:layout_marginTop="50dp"
     android:background="@drawable/back">
 
     <TextView
@@ -357,11 +354,6 @@
         android:layout_marginRight="80dp"
         android:layout_marginTop="10dp"
         android:textColor="@android:color/black"/>
-
-
-
-
-
 
 </RelativeLayout>
 </ScrollView>

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,13 +16,40 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Account_Edit extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    EditText uname,room,pass,phone,mail;
+    EditText name;
+    EditText room;
+    RadioGroup hostel;
+    RadioButton radiobtn;
+    RadioButton girls;
+    RadioButton boys;
+    EditText mail;
+    EditText phone ;
+    NavigationView navigationView;
+
+    TextView textName;
+    TextView text;
+
+
+
+    private FirebaseAuth mAuth;
+    private DatabaseReference mdb;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    String userid;
+    int selectedId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,40 +57,88 @@ public class Account_Edit extends AppCompatActivity
         setContentView(R.layout.activity_account__edit);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView=(NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View header = navigationView.getHeaderView(0);
+        text = (TextView) header.findViewById(R.id.email_nav_accedit);
+        textName = (TextView) header.findViewById(R.id.name_nav_accedit);
+
+
+        name = (EditText)findViewById(R.id.nameEdit);
+        room = (EditText)findViewById(R.id.roomEdit);
+        mail = (EditText)findViewById(R.id.emailEdit);
+        phone = (EditText)findViewById(R.id.mobileEdit);
+        mAuth = FirebaseAuth.getInstance();
+        userid=mAuth.getCurrentUser().getUid();
+        mdb= FirebaseDatabase.getInstance().getReference().child("Users").child(userid);
+
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        //  mAuth.addAuthStateListener(mAuthListener);
+
+        ValueEventListener userlistener= new ValueEventListener() {
+            @Override
+            public void onDataChange(com.google.firebase.database.DataSnapshot dataSnapshot) {
+                userDetails ud=dataSnapshot.getValue(userDetails.class);
+                name.setText(ud.getName());
+                room.setText(ud.getRoom());
+                mail.setText(ud.getEmail());
+                phone.setText(ud.getPhone());
+                text.setText(ud.getEmail());
+                textName.setText(ud.getName());
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+                // Getting Post failed, log a message
+                Log.w("CANCELLED", "loadPost:onCancelled", databaseError.toException());
+            }
+
+
+
+
+        };
+        mdb.addValueEventListener(userlistener);
+
+
+
     }
 
     public void editApply(View v)
     {
-        uname =(EditText) findViewById(R.id.nameEdit);
-        room =(EditText) findViewById(R.id.roomEdit);
-       // pass =(EditText) findViewById(R.id.password_text_view);
-        phone =(EditText) findViewById(R.id.mobileEdit);
-        mail =(EditText) findViewById(R.id.emailEdit);
+        final String uname1=name.getText().toString();
+        final String room1=room.getText().toString();
+        final String phone1=phone.getText().toString();
+        final String mail1=mail.getText().toString();
+        String userid=mAuth.getCurrentUser().getUid();
 
-        DBHandler mydb=new DBHandler(this,null,null,1);
-        mydb.UpdateDetails(uname.getText().toString(),room.getText().toString(),phone.getText().toString(),mail.getText().toString());
-        Toast.makeText(this,"Changes applied",Toast.LENGTH_LONG).show();
-        Intent i = new Intent(this,Account.class);
-        startActivity(i);
+        DatabaseReference currentUser=mdb;
 
+        if(!TextUtils.isEmpty(uname1)&&!TextUtils.isEmpty(room1)&& !TextUtils.isEmpty(mail1)&& !TextUtils.isEmpty(phone1)) {
+            currentUser.child("Name").setValue(uname1);
+            currentUser.child("Room").setValue(room1);
+
+            currentUser.child("Phone").setValue(phone1);
+            currentUser.child("Email").setValue(mail1);
+
+            Toast.makeText(this, "Changes applied", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(this, Account.class);
+            startActivity(i);
+        }
+        else
+        {
+            Toast.makeText(this, "No field can be left blank", Toast.LENGTH_LONG).show();
+        }
 
     }
 
@@ -95,6 +172,12 @@ public class Account_Edit extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_logout) {
+            mAuth.signOut();
+            Intent i=new Intent(Account_Edit.this,LoginActivity.class);
+            startActivity(i);
+
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -111,17 +194,14 @@ public class Account_Edit extends AppCompatActivity
         } else if (id == R.id.nav_ongoingOrders) {
             Intent i=new Intent(this,OngoingOrders.class);
             startActivity(i);
-        } else if (id == R.id.nav_monthlyBills) {
-            Intent i=new Intent(this,MonthlyBills.class);
-            startActivity(i);
-        } else if (id == R.id.nav_history) {
+        }  else if (id == R.id.nav_history) {
             Intent i=new Intent(this,History.class);
             startActivity(i);
         } else if (id == R.id.nav_account) {
             Intent i=new Intent(this,Account.class);
             startActivity(i);
-        } else if (id == R.id.nav_settings) {
-            Intent i=new Intent(this,Settings.class);
+        }else if (id == R.id.nav_monthlyBills) {
+            Intent i = new Intent(this, MonthlyBills.class);
             startActivity(i);
         }
         else if (id == R.id.nav_info) {

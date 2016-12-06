@@ -8,6 +8,13 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rec_list_ongoing"
+        android:background="@drawable/back"
+        />
+
     <include
         layout="@layout/app_bar_history"
         android:layout_width="match_parent"

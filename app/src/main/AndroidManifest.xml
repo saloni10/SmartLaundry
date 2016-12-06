@@ -8,14 +8,16 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
+        android:name=".Laundry2"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/laundry"
+        android:label="Smart Laundry"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,46 +26,69 @@
         </activity>
         <activity
             android:name=".UserPage"
-            android:label="@string/title_activity_user_page"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="Smart Laundry"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".RateList"
             android:label="@string/title_activity_rate_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".OngoingOrders"
             android:label="@string/title_activity_ongoing_orders"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".MonthlyBills"
             android:label="@string/title_activity_monthly_bills"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".History"
             android:label="@string/title_activity_history"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".Account"
             android:label="@string/title_activity_account"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".Information"
             android:label="@string/title_activity_information"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".Place_Order"
             android:label="@string/title_activity_place__order"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name=".Register" />
         <activity
             android:name=".Account_Edit"
             android:label="@string/title_activity_account__edit"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".place_order2"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".place_order2" />
+        <activity
+            android:name=".OrderNotifications"
+            android:label="@string/title_activity_order_notifications"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
     </application>
 
 </manifest>
